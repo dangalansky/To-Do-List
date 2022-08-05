@@ -1,0 +1,14 @@
+<script>
+function line(){
+let ps = document.getElementsByTagName("li")
+   for(let i = 0;i < ps.length; i++)
+{
+    ps[i].addEventListener('click', function handleClick() {
+        ps[i].style.textDecoration = "line-through";
+        ps[i].style.color='red';
+    });
+}
+}
+</script>
+</body>
+</html>

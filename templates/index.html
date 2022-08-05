@@ -1,0 +1,22 @@
+{% include "header.html" %}
+<body>
+{% for row in todo: %}
+{% for item in row: %}
+{% if item == row[0]: %}
+<h1>{{ item }}</h1>
+{% else: %}
+
+<ul>
+    <li>
+        <div style="display: flex;">
+        <button class="button" onclick="line()">➖</button>
+        <p>{{ item }}</p>
+        </div>
+    </li>
+</ul>
+{% endif %}
+{% endfor %}
+{% endfor %}
+<a href="{{ url_for('new_list') }}"><button>Create New List</button></a>
+
+{% include "footer.html" %}

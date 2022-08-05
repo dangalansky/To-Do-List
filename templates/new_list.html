@@ -1,0 +1,14 @@
+{% include "header.html" %}
+
+<h1>{{form.title.label}}</h1>
+<form method="POST" enctype="multipart/form-data">
+    {{form.hidden_tag()}}
+    {{form.title}}
+    <br>
+    {{form.item.label}}
+    {{form.item}}
+    {{form.submit}}
+</form>
+
+
+{% include "footer.html" %}
