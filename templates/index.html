@@ -7,7 +7,7 @@
 {% else: %}
 
 <ul>
-    <li>
+    <li class="task">
         <div style="display: flex;">
         <button class="button" onclick="line()">➖</button>
         <p>{{ item }}</p>
@@ -17,6 +17,8 @@
 {% endif %}
 {% endfor %}
 {% endfor %}
+<a href="{{ url_for('add_to_list') }}"><button>Add Item to List</button></a>
 <a href="{{ url_for('new_list') }}"><button>Create New List</button></a>
+<a href="{{ url_for('delete_list') }}"><button>Delete List</button></a>
 
 {% include "footer.html" %}
