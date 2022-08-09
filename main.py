@@ -14,6 +14,10 @@ class NewList(FlaskForm):
     submit = SubmitField("Submit")
 
 
+class Add(FlaskForm):
+    item = StringField("Enter list items, separated by comma: ")
+    submit = SubmitField("Submit")
+
 
 @app.route('/')
 def home():
@@ -34,6 +38,21 @@ def new_list():
         return home()
     return render_template('new_list.html', form=form)
 
+@app.route('/add_to_list', methods=['GET', 'POST'])
+def add_to_list():
+    form = Add()
+    if form.validate_on_submit():
+        with open('list.csv', 'a') as file:
+            file.write(f',{form.item.data}')
+        return home()
+    return render_template('add_to_list.html', form=form)
+
+@app.route('/delete', methods=['GET', 'POST'])
+def delete_list():
+    with open('list.csv', 'w') as file:
+        file.write('')
+        return home()
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(port=5001, debug=True)
