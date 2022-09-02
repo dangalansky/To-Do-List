@@ -1,27 +1,47 @@
-p {
-    font-size: 30px;
+/* styling paper */
+#paper {
+  width: 600px;
+  height: 700px;
+  position: relative;
+  margin: 20px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
 }
 
-.button {
-  background-color: blue;
-  border: none;
-  color: white;
-  padding: 15px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 20px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+/* styling red vertical line */
+#paper::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background-color: rgba(255,0,0,0.6);
 }
 
-.button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+/* styling blue horizontal lines */
+#pattern {
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
+
+/* styling text content */
+#content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  font-family: 'Caveat', cursive;
+  font-size: 19px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
+
 
 .linethrough {
     color: red;
     text-decoration: line-through;
 }
+

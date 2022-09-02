@@ -1,11 +1,18 @@
-const tasks = document.getElementsByTagName("li")
-const removeBtn = document.querySelector('.remove-complete-btn');
+var array = [];
 
-function line(){
-   for(let i = 0;i < tasks.length; i++){
-    tasks[i].addEventListener('click', function() {
-    tasks[i].classList.toggle("linethrough");
-
+//line-through function + push to array
+$("li").each(function(i) {
+    $(this).click(function(){
+        var text = $(this).text();
+        if(!array.includes(text)) {
+            $(this).addClass("linethrough");
+            array.push(text);
+            console.log(array);
+        }
     });
-}
+});
+
+//send array to flask
+function removeItems() {
+    $.post("/remove", {"array" : array});
 }
