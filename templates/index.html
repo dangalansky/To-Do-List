@@ -1,25 +1,26 @@
 {% include "header.html" %}
 <body>
-{% for row in todo: %}
-{% for item in row: %}
-{% if item == row[0]: %}
-<h1>{{ item }}</h1>
-{% else: %}
-
-<ul>
-    <li class="task">
-        <div style="display: flex;">
-        <button class="button" onclick="line()">➖</button>
-        <p>{{ item }}</p>
+<div id="paper">
+    <div id="pattern">
+        <div id="content">
+            {% for row in todo: %}
+            {% for item in row: %}
+            {% if item == row[0]: %}
+            <h4>{{ item }}</h4>
+            {% else: %}
+            <ul>
+                <li>{{ item }}</li>
+            </ul>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
         </div>
-    </li>
-</ul>
-{% endif %}
-{% endfor %}
-{% endfor %}
+    </div>
+</div
+
 <a href="{{ url_for('add_to_list') }}"><button>Add Item to List</button></a>
 <a href="{{ url_for('new_list') }}"><button>Create New List</button></a>
 <a href="{{ url_for('delete_list') }}"><button>Delete List</button></a>
-<!--<button onclick="removeComplete()">Remove Completed</button>-->
+<a href="{{ url_for('remove') }}"><button onclick="removeItems()">Remove Completed</button></a>
 
 {% include "footer.html" %}
