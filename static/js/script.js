@@ -7,7 +7,6 @@ $("li").each(function(i) {
         if(!array.includes(text)) {
             $(this).addClass("linethrough");
             array.push(text);
-            console.log(array);
         }
     });
 });

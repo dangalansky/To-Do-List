@@ -1,9 +1,28 @@
+body {
+    background-color: #B5E5CF;
+}
+
+button {
+    display: inline-block;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+}
+
+form {
+    text-align: center;
+}
+
 /* styling paper */
 #paper {
+  display: inline-block;
   width: 600px;
   height: 700px;
   position: relative;
-  margin: 20px auto;
+  margin: 20px 20px 20px 25%;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: white;
@@ -29,14 +48,19 @@
 
 /* styling text content */
 #content {
-  padding-top: 6px;
+  padding-top: 0;
   padding-left: 56px;
   padding-right: 16px;
-  line-height: 25px;
+  line-height: 28px;
   font-family: 'Caveat', cursive;
   font-size: 19px;
   letter-spacing: 1px;
   word-spacing: 5px;
+}
+
+.btn {
+    text-align: center;
+    margin-right: 10%;
 }
 
 
