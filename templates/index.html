@@ -1,8 +1,15 @@
 {% include "header.html" %}
 <body>
+<div class="btn">
+    <a href="{{ url_for('add_to_list') }}"><button>Add Item to List</button></a>
+    <a href="{{ url_for('new_list') }}"><button>Create New List</button></a>
+    <a href="{{ url_for('delete_list') }}"><button>Delete List</button></a>
+    <a href="{{ url_for('remove') }}"><button onclick="removeItems()">Remove Completed</button></a>
+</div>
 <div id="paper">
     <div id="pattern">
         <div id="content">
+            <h1>List-Maker Web App</h1>
             {% for row in todo: %}
             {% for item in row: %}
             {% if item == row[0]: %}
@@ -16,11 +23,7 @@
             {% endfor %}
         </div>
     </div>
-</div
+</div>
 
-<a href="{{ url_for('add_to_list') }}"><button>Add Item to List</button></a>
-<a href="{{ url_for('new_list') }}"><button>Create New List</button></a>
-<a href="{{ url_for('delete_list') }}"><button>Delete List</button></a>
-<a href="{{ url_for('remove') }}"><button onclick="removeItems()">Remove Completed</button></a>
 
 {% include "footer.html" %}
